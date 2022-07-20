@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<link rel="stylesheet" href="../blog.css">
+<title>An NBN retrospective - Part 1. (23 Feb 2020)</title>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header">
+        <p class="headitem">
+            <a href="../index.html">Home</a>
+        </p>
+        <p class="headitem">
+            <a href="https://github.com/chadmed/">GitHub</a>
+        </p>
+        <p class="headitem">
+            <a href="../contact.html">Contact</a>
+        </p>
+    </div>
+    <div class="post">
+        <h1>Notes from 2022</h1>
+        <p>
+            This is Part 4, where we investigate just what the fuck is going on
+            with the Fixed Wireless network. It's not pretty.
+        </p>
+
+         <p>
+            <a href="20200223-2.html">Part 1</a> focuses on the cultural deficiencies
+            at NBNCo.
+        </p>
+
+        <p>
+            <a href="20200223-3.html">Part 2</a> focuses on the failings of FTTN.
+        </p>
+
+        <p>
+            <a href="20200223-3.html">Part 3</a> deals with the HFC network and ways
+            in which it can be salvaged
+        </p>
+
+        <p>
+            <a href="20200223-5.html">Part 5</a> briefly touches on the economics
+            of the NBN.
+        </p>
+
+        <p>
+            <a href="20200223-6.html">Part 6</a> hammers home the fact that all of this
+            is a result of shameless and disgusting short sighted political manoeuvring
+            by the Liberal Party to protect the interests of Rupert Murdoch and other
+            corporate friends such as Telstra.
+        </p>
+    </div>
+    <div class="post">
+        <h1>An NBN retrospective - Part 4.</h1>
+        <p>
+            It’s no great secret that the LTE component of the rollout has been
+            spectacularly mismanaged. Utilising LTE to get high speed broadband
+            access to properties too costly and too remote for wireline technologies was
+            a good idea, however as with all things of this nature, cost cutting has led
+            to a service so broken and so unreliable that many within its footprint elect
+            to retain their ADSL services. Since switching to Fixed Wireless NBN, Whirlpool
+            user Greg Lehey has experienced no less than 288 hours of downtime. Stories like
+            this have emerged all over the country, with people reporting their services
+            simply become unavailable during peak times. This is mostly due to bandwidth
+            constrains imposed by the ineherent design of the NBN LTE network.
+        </p>
+
+        <p>
+            One of the biggest oversights in relation to the LTE network is the lack of
+            backhaul capacity from each tower to its respective POI. As LTE is a shared
+            medium, multiple users must share a single link back to the NBN Point of Interconnect,
+            or POI. This is a colocation facility, where user traffic is handed off to the
+            various ISPs’ networks. In order to cut costs, NBNCo elected to underprovision the
+            amount of backhaul from each tower to the POI. Normally, it would be pretty trivial
+            to increase backhaul capacity, as it would simply be a matter of increasing the
+            bandwidth of the fibre optic link to the tower. However, NBNCo’s cost cutting
+            method is so spectacularly stupid that this is simply not a possibility.
+        </p>
+
+        <p>
+            Instead of running a fibre optic cable to each tower for backhaul capacity,
+            NBNCo has elected to use a wireless microwave link for many towers in a hub
+            and spoke model. A microwave link is established between the POI and a master
+            tower, which then divides the bandwidth of that link between multiple slave towers,
+            which then connect actual end users to the network. This makes it incredibly
+            hard to upgrade backhaul capacity to each tower, as it involves replacing expensive
+            antennas or increasing the wireless bandwidth used, which often (always) isn’t
+            possible due to extremely limited wireless spectrum available, and legally
+            mandated power limits on wireless transmitters.
+        </p>
+
+        <p>
+            While NBNCo have claimed that there exists a list of towers and backhaul
+            sites that require upgrading, there is little to no evidence that they have
+            actually undertaken any such work. People are simply being left with the choice
+            of either braving the peak hour congestion, or retaining their ADSL services
+            and thus being forced to spend more than they need to. Regional areas within
+            the LTE footprint are historically underserviced with DSL too, often only being
+            able to get a connection from Telstra.
+        </p>
+
+        <p>
+            There are two solutions for remediating the LTE network. Obviously, the most
+            pressing matter is getting sufficient backhaul to each tower in order to alleviate
+            the peak hour congestion and inherent unreliability that comes with using a
+            cascaded microwave link. The only way to do this is to run fibre optic backhaul
+            to each tower. This is an absolute necessity if NBNCo ever hope to make Fixed Wireless
+            a viable solution for regional broadband access, and should have been the only backhaul
+            method specified in the Network Design Rules. Not only will it remove the weakest
+            link in the network in terms of bandwidth capacity, it will also allow NBNCo to
+            free up the wireless spectrum they currently use on backhaul and reallocate it
+            to increasing bandwidth on the consumer side of the network.
+        </p>
+
+        <p>
+            Another pressing matter for the LTE rollout is tower oversubscription. Much
+            like with HFC, there are simply too many end users competing for bandwidth
+            from a single tower. Of course, with multiple towers sharing a microwave
+            link back to the POI, this is simply a cascade effect of underprovisioning
+            of backhaul capacity. However, assuming we have now supplied each tower
+            with its own fibre optic link, we can address this issue by splitting
+            down towers, again much in the same way an HFC node split works.
+        </p>
+
+        <p>
+            Assuming a 1:2 split, this would mean an effective doubling of available
+            bandwidth for each end user between their premises and the tower. This
+            increased bandwidth availability then allows NBNCo to offer faster plans
+            across the network, making the same plans available across both wireline
+            and fixed wireless technologies
+        </p>
+
+        <p>
+            Another minor consideration to make is the rising adoption of 5G, and the
+            improvements it brings over LTE. At this stage, such an upgrade would
+            be purely optional, and made in consideration of private competition.
+            The expense necessary to cover regional Australia with 5G for either
+            NBNCo or a private competitor would be ruinous, and so we will not consider
+            this other than to remark that it is a possible (and likely) upgrade path
+            in the medium to long term. With the bandwidth increases we have made above,
+            LTE is still perfectly capable of delivering high speed broadband for
+            some time to come, and any 5G upgrade would either be purely marketing
+            or for increasing bandwidth efficiency to enable a greater number of
+            customers to connect to the same tower.
+        </p>
+
+        <p>
+            Continue reading in <a hre="20200223-5.html">Part 5</a>.
+        </p>
+    </div>
+</div>
+
+</body>
+
+</html>

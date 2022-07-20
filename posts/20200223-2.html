@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<link rel="stylesheet" href="../blog.css">
+<title>An NBN retrospective - Part 1. (23 Feb 2020)</title>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header">
+        <p class="headitem">
+            <a href="../index.html">Home</a>
+        </p>
+        <p class="headitem">
+            <a href="https://github.com/chadmed/">GitHub</a>
+        </p>
+        <p class="headitem">
+            <a href="../contact.html">Contact</a>
+        </p>
+    </div>
+
+    <div class="post">
+        <h1>Notes from 2022</h1>
+        <p>
+            This is Part 2, where we will discuss the technical shortcomings
+            of the FTTN rollout, and ways in which this utter travesty
+            could be mitigated. The new Labor government seems to have
+            either scraped my hard drive or enlisted the help of competent
+            analysts, because most of the suggestions I make herein are
+            currently being implemented.
+        </p>
+
+         <p>
+            <a href="20200223-2.html">Part 1</a> focuses on the cultural deficiencies
+            at NBNCo.
+        </p>
+
+        <p>
+            <a href="20200223-3.html">Part 3</a> deals with the HFC network and ways
+            in which it can be salvaged.
+        </p>
+
+        <p>
+            <a href="20200223-4"> Part 4</a> explains why the LTE network was poorly
+            thought out from the start.
+        </p>
+
+        <p>
+            <a href="20200223-5.html">Part 5</a> briefly touches on the economics
+            of the NBN.
+        </p>
+
+        <p>
+            <a href="20200223-6.html">Part 6</a> hammers home the fact that all of this
+            is a result of shameless and disgusting short sighted political manoeuvring
+            by the Liberal Party to protect the interests of Rupert Murdoch and other
+            corporate friends such as Telstra.
+        </p>
+    </div>
+
+    <div class="post">
+        <h1>An NBN restrospective - Part 2.</h1>
+        <p>
+            Having now fixed nbn's culture problem (and re-rebranded it to NBNCo),
+            we're ready to get into the minutiae of actually fixing this travesty of
+            a network. We're going to make some key assumptions that will make this
+            process a lot less painful.
+            <ul>
+                <li>
+                The NBN is put on budget as a national infrastructure expense
+                (it is currently ostensibly paid for with government bonds)
+                </li>
+                <li>
+                The Statement of Expectations has been altered to remove the
+                profit motive (at least for now)
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            Basically, we're assuming that money is no object. With the NBN now on
+            the Government's budget, it can direct funds directly to the project. This is
+            currently not possible, and NBNCo has to ask its shareholders (currently
+            Mattias Cormann and Paul Fletcher) for cash injections. This doesn't work when
+            the Government's core election promise was to achieve a budget surplus, and
+            doubly doesn't work when they don't actually care about the NBN.
+        </p>
+
+        <p>
+            Altering the SoE allows NBNCo to just plough money into the network with
+            no expectation of making a return on it. Some good the expectation of a return
+            is doing now anyway, the company only recently posted a record $2bn loss.
+            Good news is that this doesn't have to be permanent, and as part of the technical
+            solution for fixing this steaming pile, we will also be looking at how the NBN
+            makes money.
+        </p>
+
+        <p>
+            Considering the needless complexity of the current rollout, which precludes
+            a simple catch-all solution, we will be going through each current rollout
+            technology individually. We will briefly discuss each technology, why it sucks,
+            and what can be done to make it not suck.
+        </p>
+
+        <p>
+            By now, everyone in the country should be aware of what a mess Fibre to the
+            Node (FTTN) is. Originally touted by Tony Abbott and Malcolm Turnbull to be
+            a cheaper, as-good alternative to Labor's Fibre to the Premises (FTTP) network,
+            the technology has been nothing short of a spectacular failure. Such was the
+            magnitude of its failure that very shortly into its rollout, NBNCo
+            (and PM Turnbull) were forced to drastically change tack, and began casing out
+            the possibility of eating up Telstra's and Optus's old Cable networks.
+        </p>
+
+        <p>
+            Dr Ziggy Switkowski, the current NBNCo chair, fronted a 2003 Senate inquiry
+            into the state of broadband access in Australia. It was at this inquiry that
+            he declared Telstra's phone line network to be, "Five minutes to midnight,"
+            basically dead in the water (sometimes literally). It is this same Dr Ziggy
+            Switkowski who was charged by the Liberal Party to roll out an FTTN network
+            utilising this same Telstra phone line network.
+        </p>
+
+        <p>
+            FTTN is really only suitable for short lengths of copper. Fibre is run to a
+            box somewhere in the neighbourhood, in which DSL line cards are installed and
+            connected to the various phone lines running to houses. The flavour of DSL used
+            in FTTN drops in speed precipitously with distance from the node, performing
+            around the same as traditional ADSL 2+ at around 1km of line length from the node,
+            assuming the line is in good nick.
+        </p>
+
+        <p>
+            NBNCo found out very quickly that Dr Switkowski was not lying for a change in
+            2003 and many, many phone lines in this country simply not suitable for upgrading
+            to FTTN. Regardless, the Government made the company forge ahead until complaints
+            of slow speeds and dropouts became so deafeningly loud that they could no longer
+            ignore FTTN's shortcomings. Today, the FTTN footprint covers about 30% of the
+            population, a far cry from the original plan of around 76% coverage.
+        </p>
+
+        <p>
+            Around 15,000 premises in the FTTN footprint are unable to achieve even 25Mbps
+            download, the speed that was promised to be guaranteed by 2016, and the minimum
+            speed in the Government's own SoE. The ACCC recently came down like a ton of
+            bricks on both NBNCo and the ISPs for failing to identify customers who were
+            paying for services they could not achieve on FTTN. Customers were being charged
+            for a 50Mbps service while barely receiving half, or even a quarter of that in some cases.
+        </p>
+
+        <p>
+            There's no two ways around it. The entire FTTN rollout was, and remains, a total
+            failure. There is only one logical solution, and that is to completely tear it out
+            and replace it with FTTP. Given NBNCo's SoE mandates them to provide a baseline of
+            25Mbps to all premises in the country, we would naturally start with those 15,000
+            locations unable to attain 25Mbps downstream. NBNCo have access to the line
+            condition of every single FTTN connection in the country, and as such once the
+            priority sub-25Mbps connections are fully remediated, they can assign crews to
+            overbuild the FTTN in order of line quality from worst to most acceptable.
+        </p>
+
+        <p>
+            FTTP, due to its use of fibre optics all the way into the home, guarantees
+            that the end user receives the speed they pay for, be it 25Mbps or 2500Mbps.
+            FTTP is also future proof; higher speeds can be unlocked simply by replacing
+            the electronics on each end of the fibre, and current fibre optic technology
+            is capable of delivering a throughput of around 27Tbps (yes, terabits per second)
+            over a single connection.
+        </p>
+
+        <p>
+            Most importantly however, FTTP is by far the most reliable communications
+            technology available. Unaffected by the weather, power outages or even
+            simply your neighbour's cheap solar inverter (believe it or not, solar
+            inverters have been responsible for many DSL interference problems), FTTP can
+            remain active pretty much indefinitely with no degradation of service, a
+            welcome change for FTTN users stuck on drop-out prone lines.
+        </p>
+
+        <p>
+            With FTTN out of the picture, NBNCo actually has a shot at delivering on
+            its Statement of Expectations, as well as delivering quality telecommunications
+            to a segment of the population which has been totally neglected for the past
+            seven years. With access to the Internet being viewed as a basic utility by most
+            now, it is a disservice to the nation to leave people in the FTTN footprint high
+            and dry with last-century broadband speeds and developing nation electricity grid
+            levels of reliability.
+        </p>
+
+        <p>
+            Continue reading in <a href="20200223-3.html">Part 3</a>.
+        </p>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+

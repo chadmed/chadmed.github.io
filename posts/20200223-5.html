@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<link rel="stylesheet" href="../blog.css">
+<title>An NBN retrospective - Part 1. (23 Feb 2020)</title>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header">
+        <p class="headitem">
+            <a href="../index.html">Home</a>
+        </p>
+        <p class="headitem">
+            <a href="https://github.com/chadmed/">GitHub</a>
+        </p>
+        <p class="headitem">
+            <a href="../contact.html">Contact</a>
+        </p>
+    </div>
+    <div class="post">
+        <h1>Notes from 2022</h1>
+        <p>
+            This is Part 5, where we discuss in brief the economics of the NBN,
+            and why it simply doesn't stack up in its current form.
+        </p>
+
+         <p>
+            <a href="20200223-2.html">Part 1</a> focuses on the cultural deficiencies
+            at NBNCo.
+        </p>
+
+        <p>
+            <a href="20200223-3.html">Part 2</a> focuses on the failings of FTTN.
+        </p>
+
+        <p>
+            <a href="20200223-3.html">Part 3</a> deals with the HFC network and ways
+            in which it can be salvaged
+        </p>
+
+        <p>
+            <a href="20200223-4"> Part 4</a> explains why the LTE network was poorly
+            thought out from the start.
+        </p>
+
+        <p>
+            <a href="20200223-6.html">Part 6</a> hammers home the fact that all of this
+            is a result of shameless and disgusting short sighted political manoeuvring
+            by the Liberal Party to protect the interests of Rupert Murdoch and other
+            corporate friends such as Telstra.
+        </p>
+    </div>
+    <div class="post">
+        <h1>An NBN retrospective - Part 5.</h1>
+        <p>
+            One of the major hurdles to the NBN being a profitable enterprise is low
+            Average Revenue Per User (ARPU). The cause for this is multi-faceted, and
+            I make no pretences that I am an economist so this section will be short,
+            however there seem to be two major causes for NBNCo’s money troubles:
+            <ul>
+                <li>
+                    High bandwidth costs make high-speed plans unfeasible
+                </li>
+                <li>
+                    High speeds are unattainable over most technologies
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            The cost of purchasing bandwidth on the NBN is very high compared to
+            other wholesale networks. NBNCo’s pricing structure involves two access
+            charges, billable to RSPs: the Access Virtual Circuit (AVC) and Connectivity
+            Virtual Circuit (CVC).
+        </p>
+
+        <p>
+            The AVC is a per-connection charge, essentially the equivalent of the traditional
+            line rental. AVC is charged based on the link speed between the end user and the
+            RSP’s network and can be considered the “base cost” of providing an NBN service.
+            For example, a 50Mbps downstream/20Mbps upstream (50/20) AVC provided over FTTP
+            or HFC costs an RSP $34 per month. This is not the only cost to the RSP, however.
+            Per the Wholesale Broadband Agreement (WBA), the AVC charge only covers the speed
+            of the connection between the end user and the handoff to the RSP’s network. Using
+            the plumbing analogy, the AVC charge determines only the size of the pipe between
+            the end user and the POI. The RSP must also pay for the data sent across that connection.
+        </p>
+
+        <p>
+            CVC is a very controversial and divisive topic. CVC is a charge billed to RSPs based
+            on how much data they transfer over the NBN, and currently costs $17.50 per Mbps per
+            POI. A few years ago, most RSPs were engaged in a pricing race to the bottom in
+            order to try and capture new customers during their transition to the NBN. This led
+            to many severely under provisioning CVC at the POI, causing excruciating peak hour
+            slowdowns even on FTTP. Again using the plumbing analogy, CVC determines the size
+            of the pipe between the POI and the RSP’s own network. In order to keep costs down,
+            RSPs were under sizing the pipe for the amount of flow, and as such the pipe was
+            continually clogged.
+        </p>
+
+        <p>
+            The ACCC eventually intervened, forcing RSPs to advertise the “typical evening speed”
+            for each service, which is a decent indicator of whether or not the RSP has purchased
+            enough CVC from NBNCo. This of course led to RSPs actually purchasing enough CVC,
+            as none wanted to be seen selling 100/40 AVCs which could only realistically hit 25/5
+            during peak hour. This stopped the race to the bottom price-wise, and now most RSPs
+            offer very similar prices for equivalent services.
+        </p>
+
+        <p>
+            Part of this under provisioning scheme remains today, however. One may have noticed
+            that a 50/20 AVC would, naturally, require 70Mbps of CVC to use to its full potential
+            and as such should cost $30+(70*$17.50). But the typical 50/20 service costs
+            around $70 a month, not $1,259 a month. This is because RSPs use statistics to
+            minimise the amount of CVC they must purchase at each POI. The key assumption
+            is that not everyone is going to be saturating their connection at the same time
+            24/7, and so RSPs can provision enough CVC to satisfy average peak demand across a
+            given POI, rather than trying to provision enough bandwidth to satisfy constant
+            100% utilisation.
+        </p>
+
+        <p>
+            The average amount of CVC provisioned per AVC across the NBN is around 2.3Mbps,
+            up from around 1.8Mbps during the worst of the pricing war. If we assume a
+            provisioning of 2Mbps CVC for a typical 50/20 service, then the NBN cost-price
+            of such a service is $691. NBNCo are attempting to bring this figure up to 2.5Mbps,
+            however this problem is indicative of a wider issue with NBNCo’s pricing scheme,
+            which is acting as a huge barrier to uptake of higher speed plans.
+        </p>
+
+        <p>
+            The cost of bandwidth is fixed. That is, it costs NBNCo the same whether you
+            download 1GB or 1TB. Thus, CVC is a manufactured cost. CVC was conceived in order
+            to help fund the rollout by minimising the impact on the public treasury and is
+            essentially a bandwidth tax. It also served a political purpose; the
+            Liberal Party would attack the NBN for being an unprofitable venture and so
+            CVC was used to ensure that the network would be profit-making early in its
+            life to pre-emptively quash such an angle from its detractors.
+        </p>
+
+        <p>
+            Under the original FTTP plan, the CVC charge was to be gradually lowered and
+            then removed as NBNCo’s costs fell. The key to making this work was that FTTP’s
+            maintenance costs are extremely low, and beyond the initial rollout, overheads
+            would be somewhat fixed outside of upgrades and emergencies. However, in late 2013,
+            plans changed. With the change to FTTN/HFC/FTTB/anything-that-isn’t-FTTP, NBNCo
+            could no longer rely on the assumption of low and fixed overheads. FTTN and HFC are
+            extremely expensive. Telstra’s old copper network alone costs NBNCo around $1bn a year
+            simply to keep running, let alone fault fixing and upgrades.
+        </p>
+
+        <p>
+            The reality is that the change in rollout plans has precluded the elimination of
+            the CVC charge, as was originally planned and has locked out much of the rollout
+            footprint from being able to attain even the currently available high speed plans.
+            Broadband prices will continue to remain artificially high simply to cover the
+            inordinate expense of maintaining this failed, dilapidated, stillborn network while
+            also trying to generate the 7% ROI expected of it.
+        </p>
+
+        <p>
+            Read the epic conclusion in <a hre="20200223-6.html">Part 6</a>.
+        </p>
+    </div>
+</div>
+
+</body>
+
+</html>

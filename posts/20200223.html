@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<link rel="stylesheet" href="../blog.css">
+<title>An NBN retrospective - Part 1. (23 Feb 2020)</title>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header">
+        <p class="headitem">
+            <a href="../index.html">Home</a>
+        </p>
+        <p class="headitem">
+            <a href="https://github.com/chadmed/">GitHub</a>
+        </p>
+        <p class="headitem">
+            <a href="../contact.html">Contact</a>
+        </p>
+    </div>
+    <div class="post">
+        <h1>Notes from 2022</h1>
+        <p>
+            I wrote this in February of 2020. I have had extremely strong opinions
+            on the NBN for most of my life, and I'm still mad about what happened
+            to it. This was originally published in 'The Queenslander' - an online
+            magazine which has since gone defunct. You'll have to forgive any
+            grammatical errors as this text was extracted from an old version of
+            the document I submitted to the publication before editing.
+        </p>
+        <p>
+            Oh, and a note for the non-Australian: the Liberal Party is Australia's
+            "mainstream" right wing party and bears no resemblance to similarly named
+            parties in other countries. In more recent years, they have been falling
+            under the increasing influence of outwardly illiberal far right actors
+            seeking to emulate the United States Republican Party.
+        </p>
+
+        <p>
+            The original article (well, really it's more like a report) was over
+            30 pages long, so I'm splitting it into parts to make it more easily
+            digestible.
+        </p>
+
+        <p>
+            This is Part 1, which focuses primarily on cultural problems at NBNCo
+            brought about by changes made in the wake of the Liberal Party's 2013
+            election victory.
+        </p>
+
+        <p>
+            <a href="20200223-2.html">Part 2</a> focuses on the failings of FTTN.
+        </p>
+
+        <p>
+            <a href="20200223-3.html">Part 3</a> deals with the HFC network and ways
+            in which it can be salvaged.
+        </p>
+
+        <p>
+            <a href="20200223-4"> Part 4</a> explains why the LTE network was poorly
+            thought out from the start.
+        </p>
+
+        <p>
+            <a href="20200223-5.html">Part 5</a> briefly touches on the economics
+            of the NBN.
+        </p>
+
+        <p>
+            <a href="20200223-6.html">Part 6</a> hammers home the fact that all of this
+            is a result of shameless and disgusting short sighted political manoeuvring
+            by the Liberal Party to protect the interests of Rupert Murdoch and other
+            corporate friends such as Telstra.
+        </p>
+    </div>
+    <div class="post">
+        <h1>An NBN retrospective - Part 1.</h1>
+        <p>
+            It's finally 2020, and as the NBN rollout starts to wind down now is a
+            good time to take stock of just what the flipping heck happened over
+            the last 10 years. We were promised in 2009 that by the end of this year
+            we would have an all-fibre access network to replace Telstra's and Optus's
+            dilapidated twisted pair and HFC access networks. Instead, thanks to some
+            absurdly transparent political manoeuvring around 2013, what we actually got was...
+        </p>
+
+        <p>
+            Telstra's dilapidated twisted pair and HFC access networks under new management.
+            And while this was good for my Telstra shares, it was and still is an absolutely
+            diabolical, unforgivable, politically-charged sabotage of objectively good
+            national infrastructure, intended to do nothing more than prop up Rupert Murdoch's
+            crumbling media empire and to Fortnite dance and then piss on the political
+            legacies of Kevin Rudd and Stephen Conroy.
+        </p>
+
+        <p>
+            Since this change in strategy, even mentioning the NBN in less technical circles
+            gets nothing but an exasperated groan and tales of incessant dropouts, slow peak
+            hour speeds, and a government agency intent on flatly denying that there's a problem.
+            This, as has already been discussed, is by design. But now that the rollout is
+            finished, what can be done to actually fix the problem?
+        </p>
+
+        <h2>Opacity</h2>
+        <p>
+            The biggest problem with the NBN right now has nothing to do with technology.
+            With the change of government in 2013 came a new board for NBNCo, one that the
+            company's two shareholders (being the Minister for Finance and the Minister for
+            Telecommunications) knew would carry out their will without question. Gone was Dr Mike
+            Quigley and his corporate ethos of transparency and accountability and in came Ziggy
+            Switkowski, an ex-Telstra executive with ties to the government.
+        </p>
+
+        <p>
+            According to Switkowski and his new board of ex-Telstra executives, the first and foremost
+            priority for NBNCo was to immediately redact all commercial documents pertaining to the rollout.
+            From September 9 2013 until mid 2014, after the company's "independent strategic review" was
+            completed, no internal document was available for viewing. When they became available again,
+            most details that interested parties had become accustomed to having access were redacted and
+            deemed to be "commercial in confidence" - information such as fault incidences, revenues
+            and services connected.
+        </p>
+
+        <p>
+            This included most of the strategic review itself, including its
+            frames of reference and key assumptions made when coming to the decisions it recommended
+            (which conveniently enough for the government involved doing exactly what their election manifesto
+            promised). During this time, all construction work was suspended, and an undisclosed sum was
+            spent on rebranding the company with all references to NBNCo being replaced with nbn(tm). A worthy
+            use of taxpayer funds from the Strong Economic Managers.
+        </p>
+
+        <p>
+            By the time the FTTN/FTTB/FTTC/HFC/anything-that-isn't-FTTP rollout was underway, this corporate
+            culture had become entrenched. Even nbn's customers, the ISPs, were left in the dark about most
+            operational matters to the point where they were entirely powerless to deal with end user
+            complains about slow speeds and dropouts. ISPs would refer customers to nbn who would deny any
+            problem on their end and flick them back to the ISP. This is a problem that persists even today,
+            despite the ACCC's intervention forcing RSPs and nbn to publish speed data and refund customers
+            unable to achieve the speed tier they're paying for.
+        </p>
+
+        <p>
+            In virtually every HFC deployment around the world users are allowed to access their modem's
+            statistics page, which gives extremely important information about the quality of the signal
+            entering the home.  On the NBN, access to this page is disabled as soon as the CM8200 gets its
+            configuration parameters from the remote end. There is absolutely no reason to do this other
+            than to obfuscate problems with the HFC network, problems which the company denied for 3 years
+            until they became so widespread and so disruptive that they were forced to put the entire
+            rollout on hold to deal with them.
+        </p>
+
+        <p>
+            This "pause" as they called it took the better part of a year and still problems persist
+            in certain areas on the HFC network. Had these network metrics been available for public
+            viewing (as they should be) the company would have been forced to act much sooner. People
+            only noticed because Telstra Cable and Foxtel share the same network infrastructure, so
+            those services were also impacted by nbn's activities.
+        </p>
+
+        <p>
+            Transparency is a necessary facet of accountability and right now nbn are doing all that
+            they legally can to avoid being accountable to anyone. The simple fact is that operational
+            transparency highlights the great flaws in what has been deployed when compared with what
+            was meant to be deployed.
+        </p>
+
+        <p>
+            The problem with this pathetic attempt to save the Liberal Party's face using taxpayer money
+            is that it leaves consumers and ISPs totally powerless to resolve disputes with nbn unless
+            nbn deems the dispute to be "reasonable". Currently, the criteria set by nbn for a "faulty"
+            FTTN service is either a downstream sync speed lower than 20Mbps or 16 (yes, sixteen) dropouts
+            per day with no more than 1 hour between dropouts.
+        </p>
+
+        <p>
+            If a service syncs at 21Mbps or only drops out 15 times a day, it is considered to be within
+            spec by nbn, regardless of whether or not there is actually an issue with the connection.
+            The company's contempt for the end user and their own customers is on full display here. The
+            entire corporate structure exists not to facilitate the rollout of a National Broadband Network,
+            but to actively frustrate that process.
+        </p>
+
+        <p>
+            The only way to get the NBN truly back on track is to simply demolish the entire corporate
+            structure and return to a positive culture of operational transparency and accountability,
+            free from the influence of ex-Telstra corporate stooges with deep links to high profile members
+            of any particular political party. Like any government body, nbn should be accountable not
+            only to its two shareholders but to everyone in the nation as it used to be. The NBN is being
+            run in a manner similar to Home Affairs and ASIO which is quite simply disgusting for a
+            national infrastructure project.
+        </p>
+
+        <h2>Productivity (but only for me and my mates)</h2>
+        <p>
+            Public-private partnerships are a spook. And in the case of the NBN, they're a bigger spook than
+            the bogeyman. There's not a lot to say here except for that the NBN is being built by layer after
+            layer after layer of contractors, each one taking their cut off the top before passing down what's
+            left until the guy actually splicing the fibre on the street is on barely above minimum wage.
+            This was a decision made in the very early days of the rollout, as it was decided that amassing and
+            training a workforce would be too costly and take too long. This decision, however, was a poor one.
+        </p>
+
+        <p>
+            The only reason the private sector was so quick to get going was quite simply because they cheated.
+            There are people working on the HFC network right now who failed to demonstrate the basic competency
+            of crimping an F connector yet were given their ticket to perform work by dodgy RTOs in exchange
+            for a case of beer. These same RTOs also give their students the answers to the theoretical components
+            involved in becoming certified, leading to a fundamental misunderstanding of standard practice or how
+            various network elements are meant to behave.
+        </p>
+
+        <p>
+            The contractors themselves are complicit in this workforce deficiency, too. In order to cut costs
+            (not to save the Government money, but to increase profit margins), most contractors exclusively
+            subcontract to 457 visa holders. There have been instances of fully qualified Australian citizens being
+            fired simply to make way for temporary work visa holders. There has been at least one instance of
+            this occurring because the citizen refused to ignore workplace health and safety regulations where
+            his colleague did not.
+        </p>
+
+        <p>
+            The NBN was meant to see Australia return to a publicly owned last-mile access network, as we had
+            until Telstra was privatised. Before said privatisation, Telecom Australia had an entirely in-house
+            workforce of highly trained professionals building and maintaining their network. Such was the
+            quality of this workforce that industry giants such as Ericsson, Siemens and Alcatel would frequently
+            visit Telecom Australia's various training facilities around the country and take our practices back
+            to Europe to share with the world. Telecom Australia literally set new world standards in
+            telecommunications practice. nbn  on the other hand is barely capable of meeting existing ones.
+            The company has virtually no quality control measures in place and is entirely at the mercy of
+            cowboy contractors just looking for a free ride on a government gravy train.
+        </p>
+
+        <p>
+            Now that the rollout is ostensibly complete, and as the various contracts nbn has with its
+            contractors start to lapse, the company must shift towards an internally trained workforce of
+            linesmen, engineers and technicians in order to properly service (and upgrade) this monstrosity they
+            have built with at least a modicum of quality control. Being a telecommunications technician was once an
+            honourable and respected career path for young men, and Telecom Australia was one of the country's most
+            enjoyable companies to work for. There is absolutely nothing stopping nbn from carrying forward Telecom's
+            legacy save for a boardroom and government entirely hellbent on transferring wealth from the taxpayer
+            to their mates.
+        </p>
+
+        <h2>High standards (for 1995)</h2>
+        <p>
+            During Dr Quigley's tenure at the top of the NBNCo corporate structure, the company actually did
+            look something like a true heir to Telecom's legacy. Hundreds of millions was invested in research
+            and development, and from this came new standards for large-scale FTTP rollouts. NBNCo was instrumental
+            in popularising the adoption of "skinny" fibre, ribbon-like fibre optic cables that are both cheaper
+            to manufacture and easier to deploy in the field. NBNCo also innovated on removing the need for a
+            Fibre Distribution Hub, instead replacing it with a more compact multiport joint closure which fits
+            inside a standard double-length Telstra pit.
+        </p>
+
+        <p>
+            By April of 2013, the average cost per premises of deploying FTTP had dropped from the initial
+            $2,400 during the rollout's infancy to a meagre $1,100 in brownfields - already existing homes.
+            Interestingly, as soon as the government changed this figure seemed to increase by precisely 4 times
+            to conveniently make it more expensive than the average cost per premises of FTTN (which now costs
+            over $5,000 per premises in some cases).
+        </p>
+
+        <p>
+            With the change of rollout strategy, no longer was it necessary to continually innovate or spend money
+            on creating new standards. Telstra had all the standards handily ready to go. In the case of the HFC network,
+            such is the legacy of Telstra's standards that the brand new tags used by nbn to label customer drop cables
+            nd outside plant refer to Telecom Australia with the orange and blue T, branding which has been defunct since
+            1995.
+        </p>
+
+        <p>
+            nbn were also happy to spruik the latest innovation in HFC technology, DOCSIS 3.1. Despite DOCSIS 3.1 being
+            objectively good, it will never live up to the company's expectations. Since remedial work on the HFC network
+            started, the company has been deploying ARRIS 1GHz and 1.2GHz rated equipment in the street - a requirement
+            for full DOCSIS 3.1 compliance. However, inside those countless millions of beige nbn boxes and grey Telstra
+            boxes on the sides of homes lives one of the many weak links in the HFC deployment - the isolator.
+        </p>
+
+        <p>
+            When Telstra first rolled out the HFC network, the original DOCSIS specifications used only a small
+            portion of the available bandwidth on a coaxial cable, and as such built the network to a lowest common
+            denominator specification of 750MHz. And despite nbn's insistence on activating DOCSIS 3.1, they
+            continue to use the Telstra-prescribed 750MHz isolators in almost all brand new installations simply
+            because this was Telstra's accepted practice. While DOCSIS 3.1 will work across these isolators,
+            nbn will find themselves running into problems as they try increase bandwidth across the network past
+            750MHz for "Full Duplex" operation. The most insulting part is that Telstra's HFC network was
+            second-rate even in the 90s compared to most of the world, so nbn are relying on decades-old standards
+            that weren't even standard in their heyday.
+        </p>
+
+        <p>
+            As if "adapting" these standards wasn't bad enough, how about outright plagiarising them? When
+            shifting to a mix of technologies, it was necessary for nbn to create documents outlining and
+            explaining the various technical intricacies of this new bastard network. One such document is the
+            Authority to Alter, or A2A, which details what parts of the network on a customer's property
+            registered cablers are and are not allowed to mess with. Every version of this document, save for the
+            most recent, was a simple copy-paste of Telstra's old A2A documents, most of which date back to the
+            early-mid 2000s, when Telstra stopped deploying new network assets. In the grand scheme of things
+            this is pretty minor, but it illustrates just how determined nbn are to be as wholly unremarkable
+            and unambitious as they possibly can.
+        </p>
+
+        <p>
+            nbn's entire corporate structure is arguably the biggest problem with the rollout post-2013.
+            A government enterprise sworn to secrecy by its shareholders to obfuscate the utter inadequacy of
+            its "Cheaper, Faster, Better" network. A government enterprise hijacked by the Liberal Party and
+            heir Telstra cronies to transfer wealth from the taxpayer to their private contractor friends.
+            A government enterprise so blatant in their goal to simply continue on with Telstra's
+            mediocrity that they go so far as to reuse and outright steal Telstra materials and documents
+            from 20 years ago.
+        </p>
+
+        <p>
+            Sure, there are technical problems with the NBN that we will to, but these all stem from the
+            deficient corporate culture imposed on the project by the Liberal Party. Even with the multitude
+            of technical failings wrought upon the nation by the socioeconomic vandals in the Liberal caucus,
+            by putting an end to the absolute rort that is the public-private partnership, increasing internal
+            transparency and resuming the in-house development of work standards and methods, the NBN could
+            slowly and steadily become something that Australia can actually take pride in.
+        </p>
+
+        <p>
+            Continue reading in <a href="20200223-2.html">Part 2</a>.
+        </p>
+
+    </div>
+</div>
+
+</body>
+
+</html>
