@@ -1,4 +1,4 @@
-From 77854a5921b51c27fdcc1e2ecf7eab13b3cb43aa Mon Sep 17 00:00:00 2001
+From a698de58c711fd4ee383b9d67679aa9b4de57488 Mon Sep 17 00:00:00 2001
 From: James Calligeros <jcalligeros99@gmail.com>
 Date: Sat, 29 Oct 2022 22:06:27 +1000
 Subject: [PATCH] OPP: decouple microvolt, microamp and microwatt properties
@@ -13,14 +13,14 @@ Fixes: 4f9a7a1dc2a29 (OPP: Add "opp-microwatt" supporting code)
 
 Signed-off-by: James Calligeros <jcalligeros99@gmail.com>
 ---
- drivers/opp/of.c | 198 +++++++++++++++++++++++++----------------------
- 1 file changed, 104 insertions(+), 94 deletions(-)
+ drivers/opp/of.c | 197 +++++++++++++++++++++++++----------------------
+ 1 file changed, 103 insertions(+), 94 deletions(-)
 
 diff --git a/drivers/opp/of.c b/drivers/opp/of.c
-index 605d68673..53cf258bc 100644
+index 605d68673..5c4a42ede 100644
 --- a/drivers/opp/of.c
 +++ b/drivers/opp/of.c
-@@ -581,166 +581,176 @@ static bool _opp_is_supported(struct device *dev, struct opp_table *opp_table,
+@@ -581,166 +581,175 @@ static bool _opp_is_supported(struct device *dev, struct opp_table *opp_table,
  static int opp_parse_supplies(struct dev_pm_opp *opp, struct device *dev,
  			      struct opp_table *opp_table)
  {
@@ -32,9 +32,6 @@ index 605d68673..53cf258bc 100644
 +	struct property *prop_mv = NULL, *prop_ma = NULL, *prop_mw = NULL;
  	char name[NAME_MAX];
  
-+	if (unlikely(supplies == -1))
-+		supplies = 0;
-+
  	/* Search for "opp-microvolt-<name>" */
  	if (opp_table->prop_name) {
  		snprintf(name, sizeof(name), "opp-microvolt-%s",
@@ -56,11 +53,11 @@ index 605d68673..53cf258bc 100644
 -				opp_table->regulator_count = 0;
 -				return 0;
 -			}
--
--			if (!supplies)
--				return 0;
 +		prop_mv = of_find_property(opp->np, name, NULL);
  
+-			if (!supplies)
+-				return 0;
+-
 -			dev_err(dev, "%s: opp-microvolt missing although OPP managing regulators\n",
 -				__func__);
 -			return -EINVAL;
@@ -75,7 +72,8 @@ index 605d68673..53cf258bc 100644
 -		return -EINVAL;
 +	if (prop_mv) {
 +		vcount = of_property_count_u32_elems(opp->np, name);
-+		supplies = opp_table->regulator_count = vcount;
++		if (unlikely(supplies = -1))
++			supplies = opp_table->regulator_count = vcount;
 +	} else {
 +		prop_mv = NULL;
 +		vcount = 0;
@@ -149,7 +147,7 @@ index 605d68673..53cf258bc 100644
 -			ret = icount;
 -			goto free_microvolt;
 -		}
-+		if (unlikely(!supplies))
++		if (unlikely(supplies == -1))
 +			supplies = opp_table->regulator_count = icount;
 +	} else {
 +		prop_ma = NULL;
@@ -202,13 +200,13 @@ index 605d68673..53cf258bc 100644
 +			 opp_table->prop_name);
 +		prop_mw = of_find_property(opp->np, name, NULL);
 +	}
- 
--	if (prop) {
++
 +	if (!prop_mw) {
 +		/* Search for "opp-microwatt" */
 +		sprintf(name, "opp-microwatt");
 +		prop_mw = of_find_property(opp->np, name, NULL);
-+
+ 
+-	if (prop) {
 +	}
 +
 +	if (prop_mw) {
@@ -219,20 +217,20 @@ index 605d68673..53cf258bc 100644
 -			ret = pcount;
 -			goto free_microamp;
 -		}
-+		if (unlikely(!supplies))
++		if (unlikely(supplies == -1))
 +			supplies = opp_table->regulator_count = pcount;
 +	} else {
 +		prop_mw = NULL;
 +		pcount = 0;
 +	}
- 
--		if (pcount != supplies) {
++
 +	if (pcount < 0) {
 +		dev_err(dev, "%s: Invalid %s property (%d)\n",
 +			__func__, name, pcount);
 +		return pcount;
 +	}
-+
+ 
+-		if (pcount != supplies) {
 +	if (pcount) {
 +		/* There can be one or three elements per supply */
 +		if (pcount != supplies && pcount != supplies * 3) {
@@ -267,8 +265,9 @@ index 605d68673..53cf258bc 100644
  
 -	for (i = 0, j = 0; i < supplies; i++) {
 -		opp->supplies[i].u_volt = microvolt[j++];
-+	if (unlikely(!supplies)) {
-+		dev_err(dev, "%s: No power supplies found!", __func__);
++	/* No supplies associated with the OPP */
++	if (unlikely(supplies == -1)) {
++		return 0;
 +	}
  
 -		if (vcount == supplies) {
